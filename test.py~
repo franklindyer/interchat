@@ -1,0 +1,3 @@
+from DiscordBot import *
+db = DiscordBot("discord_token.txt")
+db.connect()
