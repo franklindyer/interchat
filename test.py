@@ -2,6 +2,7 @@ from DiscordBot import *
 from XMPPBot import *
 from TelegramBot import *
 from EchoService import *
+from AsyncEchoService import *
 import asyncio
 
 def main():
@@ -9,7 +10,7 @@ def main():
     xb = XMPPBot("creds/xmpp_creds.txt")  
     tb = TelegramBot("creds/telegram_token.txt")
 
-    es = EchoService(xb)
-    es.run()
+    aes = AsyncEchoService(tb)
+    aes.run()
 
 main()

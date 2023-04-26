@@ -16,7 +16,7 @@ class TelegramBot(ChatBot):
 
     def register_commands(self):
         @self.bot.message_handler()
-        def handle_msg(message):
+        async def handle_msg(message):
             self.handle_msg(message.from_user.id, message.text)
 
     def run(self):

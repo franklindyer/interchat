@@ -31,6 +31,8 @@ class DiscordBot(ChatBot):
             except discord.errors.HTTPException as e:
                 return
  
+    async def start(self):
+        await self.bot.start(self.token)
         
     def run(self):
         self.bot.run(self.token)
