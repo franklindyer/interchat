@@ -15,5 +15,6 @@ class EchoService:
     def handle_msg(self, userid, message):
         self.cbot.send_msg(userid, f"You are {userid} and said {message}")
 
-    def connect(self):
-        self.cbot.connect()
+    def run(self):
+        print(f"{self.cbot.platform} echo bot connected!")
+        self.cbot.run()

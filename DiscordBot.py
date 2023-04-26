@@ -12,9 +12,6 @@ class DiscordBot(ChatBot):
         self.bot = commands.Bot(command_prefix="$", intents=self.intents)
         self.register_commands()
 
-    def set_service(self, service):
-        self.service = service
-        
     def handle_msg(self, userid, msg):
         self.service.handle_msg(userid, msg)
 
@@ -35,8 +32,7 @@ class DiscordBot(ChatBot):
                 return
  
         
-    def connect(self):
+    def run(self):
         self.bot.run(self.token)
-        print("Discord bot successfully connected")
 
         

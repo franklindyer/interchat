@@ -3,14 +3,14 @@ class ChatBot:
         self.platform = platform
         self.credfile = credfile
 
-    def connect():
+    def set_service(self, service):
+        self.service = service
+
+    def connect(self):
         return False
 
-    def disconnect():
+    def disconnect(self):
         return False
 
-    def message(text, user):
+    def message(self, text, user):
         return False
-    
-    def run():
-        return
