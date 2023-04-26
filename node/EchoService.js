@@ -5,7 +5,7 @@ class EchoService {
         this.bot.set_service(this);
     }
 
-    handle_msg(userid, msg) {
+    handle_msg(bot, userid, msg) {
         this.bot.send_msg(userid, msg);
     }
 

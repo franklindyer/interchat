@@ -2,8 +2,9 @@ const creds = require("./creds.json")
 
 class ChatBot {
 
-    constructor(credkey) {
+    constructor(credkey, name) {
         this.creds = creds[credkey]
+        this.name = name
     }
 
     set_service(service) {

@@ -3,8 +3,8 @@ const ChatBot = require("./ChatBot.js")
 
 class DiscordBot extends ChatBot {
 
-    constructor() {
-        super("DISCORD_TOKEN")
+    constructor(name) {
+        super("DISCORD_TOKEN", name)
         this.token = this.creds
         this.init_client()
     }
@@ -26,13 +26,14 @@ class DiscordBot extends ChatBot {
         this.bot.owner = this;
 
         this.bot.on("messageCreate", function(message) {
+            if (message.author.bot) return;
             this.owner.handle_msg(message.author.id, message.content);
         });
     }
 
     handle_msg(userid, msg) {
         if (this.service != null) {
-            this.service.handle_msg(userid, msg)
+            this.service.handle_msg(this.name, userid, msg)
         }
     }
 
