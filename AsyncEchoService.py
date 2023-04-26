@@ -16,9 +16,9 @@ class AsyncEchoService:
         asyncio.set_event_loop(self.loop)
 
     def handle_msg(self, userid, message):
-        self.cbot.send_msg(userid, f"You are {userid} and said {message}")
+        self.loop.create_task(self.cbot.send_msg(userid, f"You are {userid} and said {message}"))
 
     def run(self):
         print(f"{self.cbot.platform} echo bot connected!")
-        self.loop.create_task(self.cbot.start())
+        self.loop.create_task(self.cbot.run())
         self.loop.run_forever()

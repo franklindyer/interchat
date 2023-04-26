@@ -37,4 +37,4 @@ class XMPPBot(ChatBot):
                         format='%(levelname)-8s %(message)s')
 
         self.bot.connect()
-        self.bot.process(block=True)
+        self.bot.process(block=False)

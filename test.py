@@ -10,7 +10,7 @@ def main():
     xb = XMPPBot("creds/xmpp_creds.txt")  
     tb = TelegramBot("creds/telegram_token.txt")
 
-    aes = AsyncEchoService(tb)
+    aes = AsyncEchoService(xb)
     aes.run()
 
 main()
