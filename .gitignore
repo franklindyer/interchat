@@ -3,4 +3,4 @@
 __pycache__
 creds/*
 */DS_Store
-node/creds.json
+src/creds.json
