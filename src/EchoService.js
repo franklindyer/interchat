@@ -3,6 +3,7 @@ const ChatService = require("./ChatService.js")
 class EchoService extends ChatService {
 
     constructor(bot) {
+        super();
         this.bot = bot;
         this.bot.set_service(this);
     }
