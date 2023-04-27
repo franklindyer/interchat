@@ -1,4 +1,6 @@
-class EchoService {
+const ChatService = require("./ChatService.js")
+
+class EchoService extends ChatService {
 
     constructor(bot) {
         this.bot = bot;
