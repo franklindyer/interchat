@@ -43,7 +43,4 @@ class SlackBot extends ChatBot {
 
 }
 
-// sb = new SlackBot("mr slackie")
-// sb.run()
-
 module.exports = SlackBot

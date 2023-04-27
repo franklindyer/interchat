@@ -15,5 +15,5 @@ sb = new SlackBot("Señor Slack")
 // es1.run()
 // es2.run()
 
-tts = new TalkTubeService(db, sb)
+tts = new TalkTubeService(sb, tb)
 tts.run()
