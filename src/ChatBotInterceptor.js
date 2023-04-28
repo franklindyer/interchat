@@ -1,9 +1,9 @@
 class ChatBotInterceptor {
 
-    constructor(bot) {
-        this.bot = bot;
-        this.name = bot.name
-        this.bot.set_service(this);
+    constructor(name, bots) {
+        this.bots = bots;
+        this.name = name
+        this.bots.forEach(b => b.set_service(this));
     }
 
     set_service(service) {
@@ -15,7 +15,7 @@ class ChatBotInterceptor {
     send_msg(userid, msg) {}
 
     run() {
-        this.bot.run();
+        this.bots.forEach(b => b.run());
     }
 
 }

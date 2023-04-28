@@ -3,7 +3,7 @@ const ChatBotInterceptor = require("./ChatBotInterceptor.js")
 class BatchBotInterceptor extends ChatBotInterceptor {
 
     constructor(bot, n) {
-        super(bot);
+        super(bot.name.concat("-int"), [bot]);
 
         this.limit = n;
         this.lastuser = null;
