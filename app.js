@@ -1,7 +1,7 @@
 const EchoService = require("./src/EchoService.js")
 const FruitVeggieService = require("./src/FruitVeggieService.js")
 const TalkTubeService = require("./src/TalkTubeService.js")
-const DelayBotInterceptor = require("./src/DelayBotInterceptor.js")
+const BatchBotInterceptor = require("./src/BatchBotInterceptor.js")
 const DiscordBot = require("./src/DiscordBot.js")
 const TelegramBot = require("./src/TelegramBot.js")
 const SlackBot = require("./src/SlackBot.js")
@@ -16,4 +16,4 @@ dump = new DumpBot("dump-bot")
 //    new EchoService(new DelayBotDecorator(new DelayBotDecorator(b, 3), 3)).run();
 // })
 
-new TalkTubeService(dump, new DelayBotInterceptor(tb, 4)).run()
+new TalkTubeService(dump, new BatchBotInterceptor(tb, 4)).run()

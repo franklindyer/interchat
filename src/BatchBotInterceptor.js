@@ -1,6 +1,6 @@
 const ChatBotInterceptor = require("./ChatBotInterceptor.js")
 
-class DelayBotInterceptor extends ChatBotInterceptor {
+class BatchBotInterceptor extends ChatBotInterceptor {
 
     constructor(bot, n) {
         super(bot);
@@ -30,4 +30,4 @@ class DelayBotInterceptor extends ChatBotInterceptor {
 
 }
 
-module.exports = DelayBotInterceptor
+module.exports = BatchBotInterceptor
