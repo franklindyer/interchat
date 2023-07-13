@@ -25,7 +25,7 @@ class BatchBotInterceptor extends ChatBotInterceptor {
     }
 
     send_msg(userid, msg) {
-        this.bot.send_msg(userid, msg);
+        this.bots[0].send_msg(userid, msg);
     }
 
 }

@@ -6,14 +6,11 @@ const DiscordBot = require("./src/DiscordBot.js")
 const TelegramBot = require("./src/TelegramBot.js")
 const SlackBot = require("./src/SlackBot.js")
 const DumpBot = require("./src/DumpBot.js")
+const TCPSockBot = require("./src/TCPSockBot.js")
+const BotMultiplexer = require("./src/BotMultiplexer.js")
 
-db = new DiscordBot("discord-bot");
-sb = new SlackBot("slack-bot");
+sckb = new TCPSockBot("socket-bot", 6789);
+dmpb = new DumpBot("dump-bot");
 tb = new TelegramBot("telegram-bot");
-dump = new DumpBot("dump-bot")
 
-// [db, sb, tb].forEach(b => {
-//    new EchoService(new DelayBotDecorator(new DelayBotDecorator(b, 3), 3)).run();
-// })
-
-new TalkTubeService(dump, new BatchBotInterceptor(tb, 4)).run()
+new TalkTubeService(new BotMultiplexer("mux", [dmpb, sckb]), tb).run()
